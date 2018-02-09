@@ -1,0 +1,4 @@
+vendor/**/.git
+vendor/*
+!vendor/vendor.json
+gin-bin
