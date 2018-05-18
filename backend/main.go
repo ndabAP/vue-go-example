@@ -14,9 +14,9 @@ func main() {
 		c.JSON(200, []string{runtime.GOOS, strconv.Itoa(runtime.NumCPU())})
 	})
 
-	r.POST("/api/descriptive/average", routes.Average)
-	r.POST("/api/descriptive/standard-deviation", routes.StandardDeviation)
-	r.POST("/api/distribution", routes.Distribution)
+	r.POST("/api/descriptive/average", routes.Mean)
+	r.POST("/api/descriptive/standard-deviation", routes.StdDev)
+	r.POST("/api/distribution", routes.NormalCDF)
 
 	r.Run(":3001")
 }
