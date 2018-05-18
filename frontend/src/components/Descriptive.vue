@@ -5,7 +5,7 @@
 
     <div class="grid">
       <div class="cell -4of12">
-        <p><b>Average</b>: {{average}}</p>
+        <p><b>Mean</b>: {{mean}}</p>
       </div>
       <div class="cell -4of12">
         <p><b>Standard deviation</b>: {{standardDeviation}}</p>
@@ -21,7 +21,7 @@
   export default {
     data () {
       return {
-        average: 0,
+        mean: 0,
         standardDeviation: 0,
         median: 0,
         isLoading: false
@@ -39,17 +39,17 @@
     methods: {
       setDescriptive () {
         this.setStandardDeviation()
-        this.setAverage()
+        this.setMean()
       },
 
-      async setAverage () {
-        const response = await this.$http.post('/api/descriptive/average', {data: this.data})
-        this.average = response.body.toFixed(2)
+      async setMean () {
+        const {body: mean} = await this.$http.post('/api/descriptive/mean', {data: this.data})
+        this.mean = mean.toFixed(2)
       },
 
       async setStandardDeviation () {
-        const response = await this.$http.post('/api/descriptive/standard-deviation', {data: this.data})
-        this.standardDeviation = response.body.toFixed(2)
+        const {body: standardDeviation} = await this.$http.post('/api/descriptive/standard-deviation', {data: this.data})
+        this.standardDeviation = standardDeviation.toFixed(2)
       }
     }
   }
