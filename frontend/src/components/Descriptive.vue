@@ -43,12 +43,12 @@
       },
 
       async setAverage () {
-        let response = await this.$http.post('/api/descriptive/average', {data: this.data})
+        const response = await this.$http.post('/api/descriptive/average', {data: this.data})
         this.average = response.body.toFixed(2)
       },
 
       async setStandardDeviation () {
-        let response = await this.$http.post('/api/descriptive/standard-deviation', {data: this.data})
+        const response = await this.$http.post('/api/descriptive/standard-deviation', {data: this.data})
         this.standardDeviation = response.body.toFixed(2)
       }
     }

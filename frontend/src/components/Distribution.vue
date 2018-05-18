@@ -1,8 +1,8 @@
 <template>
   <div>
     <h2>Distribution</h2>
-    <p>Based on the randomly generated data, let's get the normal distribution of it. <b>Warning</b>: The result have
-      been multiplied by 10,000 to overwhelm a bug at the chart library.</p>
+    <p>Based on the randomly generated data, let's get the cumulative density function of it. <b>Warning</b>: The result
+      have been multiplied by 10,000 to overwhelm a bug at the chart library.</p>
 
     <button class="btn btn-default" style="margin-bottom: 1.75rem;" @click="setDistribution">Calculate</button>
 
@@ -39,7 +39,7 @@
           .cartesian()
           .line()
 
-        let response = await this.$http.post('/api/distribution', {data: this.data})
+        const response = await this.$http.post('/api/distribution', {data: this.data})
 
         this.chart.setData(response.body).render()
       }

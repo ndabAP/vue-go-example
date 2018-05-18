@@ -34,13 +34,9 @@
     },
 
     async created () {
-      let response = await this.$http.get('/api/specs')
+      const response = await this.$http.get('/api/specs')
       this.os = response.body[0]
       this.cpus = response.body[1]
     }
   }
 </script>
-
-<style scoped>
-
-</style>
