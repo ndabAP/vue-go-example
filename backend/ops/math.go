@@ -1,6 +1,6 @@
 package ops
 
-// Unique values of an slice
+// Unique values of a slice
 func Uniq(s []float64) []float64 {
 	m := map[float64]bool{}
 	var r []float64
