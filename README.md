@@ -6,23 +6,23 @@ I wanted to find out how fast Go (Golang) is and how well it plays together with
 
 - Create random data
 - get calculations from Go backend
-- or get a distribution chart
+- uses in-memory persistence
 
 ## Installation
 
 ### Backend
 
-Get the govendor tool and gin, a live reload utility.
+Get the dep dependency tool and gin, a live reload utility.
 
 ```bash
-$ go get -u github.com/kardianos/govendor
+$ go get -u gonum.org/v1/gonum/...
 $ go get github.com/codegangsta/gin
 ```
 
 Fetch all dependent packages.
 
 ```bash
-$ govendor sync
+$ dep ensure
 ```
 
 Start the server.
@@ -49,7 +49,8 @@ Now navigate to [http://localhost:8080](http://localhost:8080).
 
 ## Usage
 
-First, create some random data points. Now get some basic calculations or a distribution chart.
+First, create some random data points and persist them in-memory. Now get some basic calculations or a distribution
+chart.
 
 ## Author
 

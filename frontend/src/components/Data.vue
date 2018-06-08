@@ -20,7 +20,7 @@
         </fieldset>
       </div>
       <div class="cell -4of12">
-        <button class="btn btn-default" @click="setChart">Generate</button>
+        <button class="btn btn-default" @click="persistAndVisualize">Generate</button>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
     },
 
     mounted () {
-      this.setChart()
+      this.persistAndVisualize()
       window.addEventListener('resize', () => this.renderChart())
     },
 
@@ -57,12 +57,14 @@
     },
 
     methods: {
-      setChart () {
+      async persistAndVisualize () {
         this.chart
           .cartesian()
           .line()
 
         this.$store.commit('SET_DATA', {points: this.points, multiplier: this.multiplier})
+        await this.$http.post('/api/persist', {data: this.$store.state.data})
+
         this.chart.setData(this.data).render()
       },
 
