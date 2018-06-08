@@ -22,7 +22,7 @@ $ go get github.com/codegangsta/gin
 Fetch all dependent packages.
 
 ```bash
-$ govendor fetch
+$ govendor sync
 ```
 
 Start the server.
