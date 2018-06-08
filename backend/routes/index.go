@@ -41,13 +41,6 @@ func Persist(c *gin.Context) {
 	}
 
 	txn.Commit()
-
-	txn = db.Txn(false)
-
-	_, err := txn.First("data", "id", uint(1))
-	if err != nil {
-		panic(err)
-	}
 }
 
 func Mean(c *gin.Context) {
