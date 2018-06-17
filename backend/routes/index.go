@@ -3,18 +3,17 @@ package routes
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/gonum/stat"
-	"github.com/ndabAP/vue-go-example/backend/ops"
-	"github.com/ndabAP/vue-go-example/backend/database"
-	"sort"
 	"gonum.org/v1/gonum/stat/distuv"
-	_ "fmt"
+
+	"github.com/ndabAP/vue-go-example/backend/ops"
+	"github.com/ndabAP/vue-go-example/backend/db"
 )
 
-type Data struct {
+type MemData struct {
 	Data []float64 `binding:"required"`
 }
 
-type DataSchema struct {
+type DbSchema struct {
 	Id uint
 	Data []float64 `binding:"required"`
 }
@@ -25,17 +24,17 @@ type Tuple struct {
 }
 
 func init()  {
-	database.Db()
+	db.SetupDb()
 }
 
 func Persist(c *gin.Context) {
-	data := new(Data)
+	data := new(MemData)
 	c.Bind(&data)
 
-	db := database.Database
-	txn := db.Txn(true)
+	memDB := db.Database
+	txn := memDB.Txn(true)
 
-	p := &DataSchema{uint(1), data.Data}
+	p := &DbSchema{uint(1), data.Data}
 	if err := txn.Insert("data", p); err != nil {
 		panic(err)
 	}
@@ -44,9 +43,9 @@ func Persist(c *gin.Context) {
 }
 
 func Mean(c *gin.Context) {
-	db := database.Database
+	memDB := db.Database
 
-	txn := db.Txn(false)
+	txn := memDB.Txn(false)
 	defer txn.Abort()
 
 	raw, err := txn.First("data", "id", uint(1))
@@ -54,15 +53,15 @@ func Mean(c *gin.Context) {
 		panic(err)
 	}
 
-	mean := stat.Mean(raw.(*DataSchema).Data, nil)
+	mean := stat.Mean(raw.(*DbSchema).Data, nil)
 
 	c.JSON(200, mean)
 }
 
 func StdDev(c *gin.Context) {
-	db := database.Database
+	memDB := db.Database
 
-	txn := db.Txn(false)
+	txn := memDB.Txn(false)
 	defer txn.Abort()
 
 	raw, err := txn.First("data", "id", uint(1))
@@ -70,15 +69,15 @@ func StdDev(c *gin.Context) {
 		panic(err)
 	}
 
-	stdev := stat.StdDev(raw.(*DataSchema).Data, nil)
+	stdev := stat.StdDev(raw.(*DbSchema).Data, nil)
 
 	c.JSON(200, stdev)
 }
 
 func NormalCDF(c *gin.Context) {
-	db := database.Database
+	memDB := db.Database
 
-	txn := db.Txn(false)
+	txn := memDB.Txn(false)
 	defer txn.Abort()
 
 	raw, err := txn.First("data", "id", uint(1))
@@ -86,10 +85,9 @@ func NormalCDF(c *gin.Context) {
 		panic(err)
 	}
 
-	data := raw.(*DataSchema).Data
+	data := raw.(*DbSchema).Data
 
-	sort.Float64s(data)
-	data= ops.Uniq(data)
+	data = ops.Uniq(data)
 
 	dist := distuv.Normal{
 		Mu:    stat.Mean(data, nil),
@@ -100,7 +98,7 @@ func NormalCDF(c *gin.Context) {
 	for _, number := range data {
 		normal := Tuple{
 			number,
-			dist.CDF(number) * 10000,
+			dist.CDF(number) * 10000, // see https://github.com/forio/contour/issues/256
 		}
 
 		normalcdf = append(normalcdf, normal)
