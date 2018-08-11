@@ -34,9 +34,9 @@
     },
 
     async created () {
-      const response = await this.$http.get('/api/specs')
-      this.os = response.body[0]
-      this.cpus = response.body[1]
+      const {body: [os, cpus]} = await this.$http.get('/api/specs')
+      this.os = os
+      this.cpus = cpus
     }
   }
 </script>

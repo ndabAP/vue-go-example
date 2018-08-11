@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Distribution</h2>
+    <h3>Distribution</h3>
     <p>Based on the randomly generated data, let's get the cumulative density function of it. <b>Warning</b>: The result
       have been multiplied by 10,000 to overwhelm a bug at the chart library.</p>
 
@@ -39,9 +39,9 @@
           .cartesian()
           .line()
 
-        const response = await this.$http.post('/api/distribution', {data: this.data})
+        const {body: data} = await this.$http.post('/api/distribution')
 
-        this.chart.setData(response.body).render()
+        this.chart.setData(data).render()
       }
     }
   }
