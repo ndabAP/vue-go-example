@@ -42,10 +42,10 @@ $ npm i
 Start the server.
 
 ```bash
-$ npm run dev
+$ npm run serve
 ```
 
-Now navigate to [http://localhost:8080](http://localhost:8080).
+Now navigate to the provided URL.
 
 ## Usage
 

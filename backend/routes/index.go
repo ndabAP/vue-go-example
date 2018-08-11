@@ -88,7 +88,6 @@ func NormalCDF(c *gin.Context) {
 	data := raw.(*DbSchema).Data
 
 	data = ops.Uniq(data)
-
 	dist := distuv.Normal{
 		Mu:    stat.Mean(data, nil),
 		Sigma: stat.StdDev(data, nil),
