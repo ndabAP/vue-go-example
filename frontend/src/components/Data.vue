@@ -2,7 +2,7 @@
   <div>
     <h2>Data</h2>
     <p>Let's generate some random data. Points represent the quantity of data points and multiplier is some kind of
-      capacity. <b>Warning</b>: Remember that your browser might crash if you generate to many points!</p>
+      capacity. <b>Warning</b>: Remember that your browser might crash if you generate too many points!</p>
 
     <div id="data" style="width: 100%; height: 300px;"></div>
 
