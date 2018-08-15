@@ -49,8 +49,7 @@ Now navigate to the provided URL.
 
 ## Usage
 
-First, create some random data points and persist them in-memory. Now get some basic calculations or a distribution
-chart.
+First, investigate the specs. Second, create some random data points and persist them in-memory. Now get some basic calculations or a distribution chart.
 
 ## Author
 
