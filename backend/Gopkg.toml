@@ -44,3 +44,7 @@
 [[constraint]]
   branch = "master"
   name = "github.com/hashicorp/go-memdb"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/pbnjay/memory"

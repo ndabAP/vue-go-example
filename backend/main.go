@@ -5,13 +5,18 @@ import (
 	"github.com/ndabAP/vue-go-example/backend/routes"
 	"runtime"
 	"strconv"
+	"github.com/pbnjay/memory"
 )
 
 func main() {
 	r := gin.Default()
 
 	r.GET("/api/specs", func(c *gin.Context) {
-		c.JSON(200, []string{runtime.GOOS, strconv.Itoa(runtime.NumCPU())})
+		c.JSON(200, []string{
+			runtime.GOOS,
+			strconv.Itoa(runtime.NumCPU()),
+			strconv.FormatUint(memory.TotalMemory() / (1024 * 1024), 10),
+		})
 	})
 
 	r.POST("/api/persist", routes.Persist)

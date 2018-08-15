@@ -19,6 +19,10 @@
         <td>CPUs</td>
         <td>{{cpus}}</td>
       </tr>
+      <tr>
+        <td>Memory</td>
+        <td>{{memory}}</td>
+      </tr>
       </tbody>
     </table>
   </div>
@@ -29,14 +33,16 @@
     data () {
       return {
         os: '',
-        cpus: 0
+        cpus: 0,
+        memory: 0
       }
     },
 
     async created () {
-      const {body: [os, cpus]} = await this.$http.get('/api/specs')
+      const {body: [os, cpus, memory]} = await this.$http.get('/api/specs')
       this.os = os
       this.cpus = cpus
+      this.memory = memory
     }
   }
 </script>

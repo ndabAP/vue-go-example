@@ -94,10 +94,10 @@ func NormalCDF(c *gin.Context) {
 	}
 
 	var normalcdf []Tuple
-	for _, number := range data {
+	for _, x := range data {
 		normal := Tuple{
-			number,
-			dist.CDF(number) * 10000, // see https://github.com/forio/contour/issues/256
+			x,
+			dist.CDF(x) * 10000, // see https://github.com/forio/contour/issues/256
 		}
 
 		normalcdf = append(normalcdf, normal)
