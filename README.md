@@ -1,6 +1,6 @@
 # Vue.js and Go example project
 
-I wanted to find out how fast Go (Golang) is and how well it plays together with Vue.js.
+Mathematical operations with Go (Golang) and Vue.js.
 
 ## Features
 
