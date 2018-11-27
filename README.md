@@ -1,12 +1,13 @@
 # Vue.js and Go example project
 
-Mathematical operations with Go (Golang) and Vue.js.
+Mathematical operations with Go (Golang) and Vue.js. See the [demo](https://vue-go-example.herokuapp.com) (you may need 
+to wait 30 seconds).
 
 ## Features
 
 - Create random data
-- get calculations from Go backend
-- uses in-memory persistence
+- Get calculations from Go backend
+- Uses in-memory persistence
 
 ## Installation
 
