@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   productionSourceMap: false,
 
@@ -13,7 +11,7 @@ module.exports = {
 
   lintOnSave: 'error',
 
-  outputDir: '../backend/assets',
+  outputDir: '../public',
 
   devServer: {
     proxy: {

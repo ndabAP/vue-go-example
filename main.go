@@ -1,15 +1,20 @@
 package main
 
 import (
+	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
-	"github.com/ndabAP/vue-go-example/backend/routes"
+	"github.com/ndabAP/vue-go-example/routes"
+	"github.com/pbnjay/memory"
 	"runtime"
 	"strconv"
-	"github.com/pbnjay/memory"
 )
 
 func main() {
 	r := gin.Default()
+
+	r.Use(static.Serve("/", static.LocalFile("./public", true)))
+	r.Static("/css", "public/css")
+	r.Static("/js", "public/js")
 
 	r.GET("/api/specs", func(c *gin.Context) {
 		c.JSON(200, []string{

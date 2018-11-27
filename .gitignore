@@ -1,2 +1,6 @@
 .idea
 backend/gin-bin
+vendor/**/.git
+vendor/*
+!vendor/vendor.json
+gin-bin

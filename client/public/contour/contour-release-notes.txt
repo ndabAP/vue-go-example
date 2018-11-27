@@ -1,0 +1,2 @@
+  * Merge pull request #218 from forio/legend-fiddle
+  * fix jsfiddle for legend.el example

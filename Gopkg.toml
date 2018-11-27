@@ -48,3 +48,7 @@
 [[constraint]]
   branch = "master"
   name = "github.com/pbnjay/memory"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gin-contrib/static"
