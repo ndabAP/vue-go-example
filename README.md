@@ -13,7 +13,7 @@ to wait 30 seconds).
 
 ### Backend
 
-Get the dep dependency tool and gin, a live reload utility.
+Get the dep dependency tool and gin, a live reload utility. We also need Gonum for the statistical calculations. 
 
 ```bash
 $ go get -u gonum.org/v1/gonum/...
