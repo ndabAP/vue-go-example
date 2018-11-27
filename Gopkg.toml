@@ -26,7 +26,7 @@
 
 [metadata.heroku]
   root-package = "github.com/ndabAP/vue-go-example"
-  go-version = "go1.10.3"
+  go-version = "go1.10"
 
 [[constraint]]
   name = "github.com/gin-gonic/gin"
