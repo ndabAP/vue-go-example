@@ -37,7 +37,7 @@ $ gin run main.go
 Install dependencies.
 
 ```bash
-$ npm i
+$ cd client && npm i
 ```
 
 Start the server.
