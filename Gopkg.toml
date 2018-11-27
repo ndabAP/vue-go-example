@@ -24,6 +24,9 @@
 #   go-tests = true
 #   unused-packages = true
 
+[metadata.heroku]
+  root-package = "github.com/ndabAP/vue-go-example"
+  go-version = "go1.10.3"
 
 [[constraint]]
   name = "github.com/gin-gonic/gin"
