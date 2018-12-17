@@ -3,10 +3,11 @@ package main
 import (
 	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
-	"github.com/ndabAP/vue-go-example/routes"
 	"github.com/pbnjay/memory"
 	"runtime"
 	"strconv"
+	
+	"github.com/ndabAP/vue-go-example/routes"
 )
 
 func main() {
