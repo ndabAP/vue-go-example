@@ -32,7 +32,7 @@
     "eslint-plugin-node": "^7.0.1",
     "lint-staged": "^7.2.0",
     "node-sass": "^4.9.0",
-    "ora": "^1.2.0",
+    "ora": "^3.0.0",
     "phantomjs-prebuilt": "^2.1.14",
     "rimraf": "^2.6.0",
     "sass-loader": "^7.0.1",
