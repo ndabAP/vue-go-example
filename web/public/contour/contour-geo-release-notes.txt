@@ -1,0 +1,8 @@
+  * Merge pull request #29 from forio/issues-28
+  * Merge pull request #30 from forio/topojson-dist-only
+  * update examples/demo (which is NEVER USED in building or contour-showcase) to look at dist folder for topojson files
+  * remove topojson files from examples directory
+  * change feature for world.json from "all" to "countries"
+  * issue-28: add back in jsfiddle for map.projection now that sample code works
+  * issue-28: fix sample code per jaime
+  * contour-geo #28: commenting out the jsfiddle for this until #28 is fixed didn't work. remove completely so it doesn't appear in the generated docs

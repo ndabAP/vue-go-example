@@ -13,28 +13,17 @@ to wait 30 seconds).
 
 ### Backend
 
-Get the dep dependency tool and gin, a live reload utility.
+You need Go 1.11 which includes module support. Dependencies are defined inside `go.mod`. To start the server, simply enter:
 
 ```bash
-$ go get -u gonum.org/v1/gonum/...
-$ go get github.com/codegangsta/gin
+$ go run cmd/vue-go-example/main.go 
 ```
 
-Fetch all dependent packages.
-
-```bash
-$ dep ensure
-```
-
-Start the server.
-
-```bash
-$ gin run main.go
-```
+This will fetch all dependencies automatically and starts the server at port 3000. The clients target port is also set to 3000. You can change the port at `web/vue.config.js`.
 
 ### Frontend
 
-Install dependencies.
+Install the dependencies.
 
 ```bash
 $ npm i

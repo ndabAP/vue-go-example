@@ -1,1 +1,0 @@
-  * fnm-105 fix script include paths so that json example works
