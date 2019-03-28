@@ -16,7 +16,7 @@ to wait 30 seconds).
 You need Go 1.11 which includes module support. Dependencies are defined inside `go.mod`. To start the server, simply enter:
 
 ```bash
-$ go run cmd/vue-go-example/main.go 
+$ PORT=3000 go run cmd/vue-go-example/main.go 
 ```
 
 This will fetch all dependencies automatically and starts the server at port 3000. The clients target port is also set to 3000. You can change the port at `web/vue.config.js`.
