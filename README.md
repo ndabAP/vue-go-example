@@ -13,7 +13,7 @@ to wait 30 seconds).
 
 ### Backend
 
-You need at least Go 1.11 which includes module support. Dependencies are defined inside `go.mod`. To start the server, simply enter:
+You need at least Go 1.11 which includes module support. You don't have to place this application into the `GOPATH`! Dependencies are defined inside `go.mod`. To start the server, simply enter:
 
 ```bash
 $ PORT=3000 go run cmd/vue-go-example/main.go 
