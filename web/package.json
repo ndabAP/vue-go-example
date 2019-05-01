@@ -22,7 +22,7 @@
     "@vue/cli-plugin-eslint": "^3.5.1",
     "@vue/cli-service": "^3.4.0",
     "@vue/eslint-config-standard": "^3.0.0",
-    "autoprefixer": "^9.4.9",
+    "autoprefixer": "^9.5.1",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
