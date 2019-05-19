@@ -9,6 +9,7 @@ import (
 	"github.com/pbnjay/memory"
 )
 
+// SetupRoutes connects the HTTP API endpoints to the handlers
 func SetupRoutes() *gin.Engine {
 	r := gin.Default()
 

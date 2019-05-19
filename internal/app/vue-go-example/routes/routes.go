@@ -26,6 +26,7 @@ func init() {
 	db.SetupDb()
 }
 
+// Persist saves the given data
 func Persist(c *gin.Context) {
 	data := new(memData)
 	c.Bind(&data)
@@ -41,6 +42,7 @@ func Persist(c *gin.Context) {
 	txn.Commit()
 }
 
+// Mean returns the average from the in-memory data
 func Mean(c *gin.Context) {
 	memDB := db.Database
 
@@ -57,6 +59,7 @@ func Mean(c *gin.Context) {
 	c.JSON(200, mean)
 }
 
+// StdDev returns the standard deviation from the in-memory data
 func StdDev(c *gin.Context) {
 	memDB := db.Database
 
@@ -73,6 +76,7 @@ func StdDev(c *gin.Context) {
 	c.JSON(200, stdev)
 }
 
+// NormalCDF returns the cumulative normal distribution from the in-memory data
 func NormalCDF(c *gin.Context) {
 	memDB := db.Database
 
