@@ -13,7 +13,7 @@ func SetupDb() {
 					"id": &memdb.IndexSchema{
 						Name:    "id",
 						Unique:  true,
-						Indexer: &memdb.UintFieldIndex{Field: "Id"},
+						Indexer: &memdb.UintFieldIndex{Field: "ID"},
 					},
 				},
 			},

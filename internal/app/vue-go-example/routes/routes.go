@@ -13,7 +13,7 @@ type memData struct {
 }
 
 type dbSchema struct {
-	Id   uint
+	ID   uint
 	Data []float64 `binding:"required"`
 }
 
