@@ -10,8 +10,12 @@
       <div class="cell -4of12">
         <p><b>Standard deviation</b>: {{standardDeviation}}</p>
       </div>
-      <div class="cell -4of12">
-        <button class="btn btn-default" @click="setDescriptive">Calculate</button>
+      <div class="cell -4of12" style="display: flex; align-items: center; justify-content: center;">
+        <button
+          class="btn btn-default"
+          @click="setDescriptive">
+          Calculate <span v-if="isLoading" class="loading"></span>
+        </button>
       </div>
     </div>
   </div>
@@ -19,14 +23,12 @@
 
 <script>
   export default {
-    data () {
-      return {
-        mean: 0,
-        standardDeviation: 0,
-        median: 0,
-        isLoading: false
-      }
-    },
+    data: () => ({
+      mean: 0,
+      standardDeviation: 0,
+      median: 0,
+      isLoading: false
+    }),
 
     computed: {
       data: {
@@ -37,19 +39,31 @@
     },
 
     methods: {
-      setDescriptive () {
-        this.setStandardDeviation()
-        this.setMean()
+      async setDescriptive () {
+        this.isLoading = true
+
+        await this.setStandardDeviation()
+        await this.setMean()
+
+        this.isLoading = false
       },
 
-      async setMean () {
-        const { body: mean } = await this.$http.post('/api/descriptive/mean')
-        this.mean = mean.toFixed(2)
+      setMean () {
+        return new Promise(async resolve => {
+          const { body: mean } = await this.$http.post('/api/descriptive/mean')
+          this.mean = mean.toFixed(2)
+
+          resolve()
+        })
       },
 
       async setStandardDeviation () {
-        const { body: standardDeviation } = await this.$http.post('/api/descriptive/standard-deviation')
-        this.standardDeviation = standardDeviation.toFixed(2)
+        return new Promise(async resolve => {
+          const { body: standardDeviation } = await this.$http.post('/api/descriptive/standard-deviation')
+          this.standardDeviation = standardDeviation.toFixed(2)
+
+          resolve()
+        })
       }
     }
   }

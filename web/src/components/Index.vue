@@ -7,6 +7,8 @@
     <descriptive style="margin-top: 1.75rem;"></descriptive>
 
     <distribution style="margin-top: 1.75rem;"></distribution>
+
+    <a href="https://github.com/ndabAP/vue-go-example">Source code</a>
   </div>
 </template>
 

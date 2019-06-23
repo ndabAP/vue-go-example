@@ -19,8 +19,12 @@
           <input id="dataPoints" type="text" v-model="multiplier" placeholder="Enter a number" class="form-control">
         </fieldset>
       </div>
-      <div class="cell -4of12">
-        <button class="btn btn-default" @click="persistAndVisualize">Generate</button>
+      <div class="cell -4of12" style="display: flex; align-items: center; justify-content: center;">
+        <button
+          class="btn btn-default"
+          @click="persistAndVisualize">
+            Generate <span v-if="isLoading" class="loading"></span>
+          </button>
       </div>
     </div>
   </div>
@@ -29,23 +33,23 @@
 <script>
   /* global Contour */
   export default {
-    data () {
-      return {
-        points: 100,
-        multiplier: 10,
-        chart: new Contour({
-          el: '#data',
-          line: {
-            smooth: true,
-            marker: { enable: false }
-          }
-        })
-      }
-    },
+    data: () => ({
+      isLoading: false,
+      points: 100,
+      multiplier: 10,
 
-    mounted () {
-      this.persistAndVisualize()
-      window.addEventListener('resize', () => this.renderChart())
+      chart: new Contour({
+        el: '#data',
+        line: {
+          smooth: true,
+          marker: { enable: false }
+        }
+      })
+    }),
+
+    async mounted () {
+      await this.persistAndVisualize()
+      window.addEventListener('resize', this.renderChart)
     },
 
     computed: {
@@ -57,15 +61,23 @@
     },
 
     methods: {
-      async persistAndVisualize () {
-        this.chart
-          .cartesian()
-          .line()
+      persistAndVisualize () {
+        return new Promise(async resolve => {
+          this.isLoading = true
 
-        this.$store.commit('SET_DATA', { points: this.points, multiplier: this.multiplier })
-        await this.$http.post('/api/persist', { data: this.$store.state.data })
+          this.chart
+            .cartesian()
+            .line()
 
-        this.chart.setData(this.data).render()
+          this.$store.commit('SET_DATA', { points: this.points, multiplier: this.multiplier })
+
+          await this.$http.post('/api/persist', { data: this.$store.state.data })
+          this.chart.setData(this.data).render()
+
+          this.isLoading = false
+
+          resolve()
+        })
       },
 
       renderChart () {
