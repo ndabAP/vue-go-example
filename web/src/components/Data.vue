@@ -37,7 +37,7 @@
           el: '#data',
           line: {
             smooth: true,
-            marker: {enable: false}
+            marker: { enable: false }
           }
         })
       }
@@ -62,8 +62,8 @@
           .cartesian()
           .line()
 
-        this.$store.commit('SET_DATA', {points: this.points, multiplier: this.multiplier})
-        await this.$http.post('/api/persist', {data: this.$store.state.data})
+        this.$store.commit('SET_DATA', { points: this.points, multiplier: this.multiplier })
+        await this.$http.post('/api/persist', { data: this.$store.state.data })
 
         this.chart.setData(this.data).render()
       },

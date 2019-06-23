@@ -19,7 +19,7 @@
           el: '#distribution',
           line: {
             smooth: true,
-            marker: {enable: false}
+            marker: { enable: false }
           }
         })
       }
@@ -39,7 +39,7 @@
           .cartesian()
           .line()
 
-        const {body: data} = await this.$http.post('/api/distribution')
+        const { body: data } = await this.$http.post('/api/distribution')
 
         this.chart.setData(data).render()
       }

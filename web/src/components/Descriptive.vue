@@ -43,12 +43,12 @@
       },
 
       async setMean () {
-        const {body: mean} = await this.$http.post('/api/descriptive/mean')
+        const { body: mean } = await this.$http.post('/api/descriptive/mean')
         this.mean = mean.toFixed(2)
       },
 
       async setStandardDeviation () {
-        const {body: standardDeviation} = await this.$http.post('/api/descriptive/standard-deviation')
+        const { body: standardDeviation } = await this.$http.post('/api/descriptive/standard-deviation')
         this.standardDeviation = standardDeviation.toFixed(2)
       }
     }

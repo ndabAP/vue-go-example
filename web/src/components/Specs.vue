@@ -39,7 +39,7 @@
     },
 
     async created () {
-      const {body: [os, cpus, memory]} = await this.$http.get('/api/specs')
+      const { body: [os, cpus, memory] } = await this.$http.get('/api/specs')
       this.os = os
       this.cpus = cpus
       this.memory = memory
