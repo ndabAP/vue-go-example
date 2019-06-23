@@ -61,6 +61,10 @@
     },
 
     methods: {
+      async createData ({ points, multiplier }) {
+        return Array.from({ length: points }, () => Math.floor((Math.random() * multiplier) / Math.random()))
+      },
+
       persistAndVisualize () {
         return new Promise(async resolve => {
           this.isLoading = true
@@ -69,7 +73,8 @@
             .cartesian()
             .line()
 
-          this.$store.commit('SET_DATA', { points: this.points, multiplier: this.multiplier })
+          const data = await this.createData({ points: this.points, multiplier: this.multiplier })
+          this.$store.commit('SET_DATA', data)
 
           await this.$http.post('/api/persist', { data: this.$store.state.data })
           this.chart.setData(this.data).render()

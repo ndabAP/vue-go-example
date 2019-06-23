@@ -9,8 +9,8 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    SET_DATA (state, { points, multiplier }) {
-      state.data = Array.from({ length: points }, () => Math.floor((Math.random() * multiplier) / Math.random()))
+    SET_DATA (state, data) {
+      state.data = data
     }
   }
 })
