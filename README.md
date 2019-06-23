@@ -41,6 +41,18 @@ Now navigate to the provided URL.
 
 First, investigate the specs. Second, create some random data points and persist them in-memory. Now get some basic calculations or a distribution chart.
 
+## Build
+
+To build everything simply use `make` (`nmake` for Windows).
+
+### Server
+
+Its possible to use `go build -o bin/vue-go-example cmd/vue-go-example/main.go` or use `make build_server`. Both creates a binary inside `bin` with name `vue-go-example`.
+
+### Client
+
+You can either build the client with `make build_client` or you go the client directory and enter `npm run build` (or with yarn: `yarn build`). Both builds the application and moves it into `website`.
+
 ## Author
 
 [Julian Claus](https://www.julian-claus.de) and contributors.
