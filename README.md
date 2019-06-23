@@ -15,7 +15,7 @@ Mathematical operations with Go (Golang) and Vue.js. See the [demo](https://vue-
 You need at least Go 1.11 which includes module support. You don't have to place this application into the `GOPATH`! Dependencies are defined inside `go.mod`. To start the server, simply enter:
 
 ```bash
-$ PORT=3000 go run cmd/vue-go-example/main.go 
+$ go run cmd/vue-go-example/main.go 
 ```
 
 This will fetch all dependencies automatically and starts the server at port 3000. The clients target port is also set to 3000. You can change the clients port at `web/vue.config.js`.
