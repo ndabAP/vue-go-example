@@ -6,32 +6,34 @@ require (
 	github.com/0xAX/notificator v0.0.0-20181105090803-d81462e38c21 // indirect
 	github.com/codegangsta/envy v0.0.0-20141216192214-4b78388c8ce4 // indirect
 	github.com/codegangsta/gin v0.0.0-20171026143024-cafe2ce98974 // indirect
-	github.com/gin-contrib/sse v0.0.0-20170109093832-22d885f9ecc7 // indirect
-	github.com/gin-contrib/static v0.0.0-20180827025113-8cbcdde04781
-	github.com/gin-gonic/gin v0.0.0-20170702092826-d459835d2b07
-	github.com/golang/protobuf v1.1.0 // indirect
-	github.com/gonum/blas v0.0.0-20180125090452-e7c5890b24cf // indirect
-	github.com/gonum/floats v0.0.0-20180125090339-7de1f4ea7ab5 // indirect
+	github.com/gin-contrib/sse v0.1.0 // indirect
+	github.com/gin-contrib/static v0.0.0-20190511124741-c1cdf9c9ec7b
+	github.com/gin-gonic/gin v1.4.0
+	github.com/gonum/blas v0.0.0-20181208220705-f22b278b28ac // indirect
+	github.com/gonum/floats v0.0.0-20181209220543-c233463c7e82 // indirect
 	github.com/gonum/integrate v0.0.0-20181209220457-a422b5c0fdf2 // indirect
-	github.com/gonum/internal v0.0.0-20180125090855-fda53f8d2571 // indirect
-	github.com/gonum/lapack v0.0.0-20180125091020-f0b8b25edece // indirect
-	github.com/gonum/matrix v0.0.0-20180124231301-a41cc49d4c29 // indirect
-	github.com/gonum/stat v0.0.0-20180125090729-ec9c8a1062f4
-	github.com/hashicorp/go-immutable-radix v0.0.0-20180129170900-7f3cd4390caa // indirect
-	github.com/hashicorp/go-memdb v0.0.0-20180223233045-1289e7fffe71
+	github.com/gonum/internal v0.0.0-20181124074243-f884aa714029 // indirect
+	github.com/gonum/lapack v0.0.0-20181123203213-e4cdc5a0bff9 // indirect
+	github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9 // indirect
+	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
+	github.com/hashicorp/go-memdb v1.0.3
 	github.com/hashicorp/go-uuid v1.0.1 // indirect
-	github.com/hashicorp/golang-lru v0.0.0-20180201235237-0fb14efe8c47 // indirect
-	github.com/mattn/go-isatty v0.0.3 // indirect
+	github.com/hashicorp/golang-lru v0.5.1 // indirect
+	github.com/mattn/go-isatty v0.0.8 // indirect
 	github.com/mattn/go-shellwords v1.0.5 // indirect
-	github.com/pbnjay/memory v0.0.0-20180430190442-16f8386fc07f
-	github.com/stretchr/testify v1.3.0 // indirect
-	github.com/ugorji/go v1.1.1 // indirect
-	golang.org/x/exp v0.0.0-20180604040759-f5f346835693 // indirect
-	golang.org/x/net v0.0.0-20190327214358-63eda1eb0650 // indirect
-	golang.org/x/sync v0.0.0-20190227155943-e225da77a7e6 // indirect
-	gonum.org/v1/gonum v0.0.0-20180608062229-e4cc524e41c0
-	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
-	gopkg.in/go-playground/validator.v8 v8.18.2 // indirect
+	github.com/pbnjay/memory v0.0.0-20190104145345-974d429e7ae4
+	github.com/remyoudompheng/bigfft v0.0.0-20190512091148-babf20351dd7 // indirect
+	github.com/stretchr/objx v0.2.0 // indirect
+	golang.org/x/crypto v0.0.0-20190621222207-cc06ce4a13d4 // indirect
+	golang.org/x/exp v0.0.0-20190510132918-efd6b22b2522 // indirect
+	golang.org/x/image v0.0.0-20190622003408-7e034cad6442 // indirect
+	golang.org/x/mobile v0.0.0-20190607214518-6fa95d984e88 // indirect
+	golang.org/x/net v0.0.0-20190620200207-3b0461eec859 // indirect
+	golang.org/x/sys v0.0.0-20190621203818-d432491b9138 // indirect
+	golang.org/x/text v0.3.2 // indirect
+	golang.org/x/tools v0.0.0-20190621195816-6e04913cbbac // indirect
+	gonum.org/v1/gonum v0.0.0-20190621125449-90b715451587
+	gonum.org/v1/netlib v0.0.0-20190331212654-76723241ea4e // indirect
+	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 	gopkg.in/urfave/cli.v1 v1.20.0 // indirect
-	gopkg.in/yaml.v2 v2.2.1 // indirect
 )
