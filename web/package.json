@@ -36,7 +36,7 @@
     "phantomjs-prebuilt": "^2.1.14",
     "rimraf": "^2.6.3",
     "sass-loader": "^7.0.1",
-    "semver": "^5.7.0",
+    "semver": "^6.3.0",
     "vue-template-compiler": "^2.6.7",
     "webpack": "^4.35.0"
   },
