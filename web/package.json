@@ -35,7 +35,7 @@
     "ora": "^1.2.0",
     "phantomjs-prebuilt": "^2.1.14",
     "rimraf": "^2.6.3",
-    "sass-loader": "^7.0.1",
+    "sass-loader": "^7.3.1",
     "semver": "^5.7.0",
     "vue-template-compiler": "^2.6.7",
     "webpack": "^4.41.0"
