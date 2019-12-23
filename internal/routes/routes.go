@@ -5,7 +5,7 @@ import (
 	"github.com/gonum/stat"
 	"gonum.org/v1/gonum/stat/distuv"
 
-	"github.com/ndabAP/vue-go-example/internal/app/vue-go-example/db"
+	"github.com/ndabAP/vue-go-example/internal/db"
 )
 
 type memData struct {

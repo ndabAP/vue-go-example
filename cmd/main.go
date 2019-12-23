@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/ndabAP/vue-go-example/internal/app/vue-go-example/routes"
+	"github.com/ndabAP/vue-go-example/internal/routes"
 )
 
 const defaultPort string = "3000"
