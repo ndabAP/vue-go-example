@@ -24,7 +24,6 @@ func SetupRoutes() *gin.Engine {
 			strconv.FormatUint(memory.TotalMemory()/(1024*1024), 10),
 		})
 	})
-
 	r.POST("/api/persist", Persist)
 	r.POST("/api/descriptive/mean", Mean)
 	r.POST("/api/descriptive/standard-deviation", StdDev)
