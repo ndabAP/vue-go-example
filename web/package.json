@@ -28,7 +28,7 @@
     "babel-loader": "^7.1.5",
     "chalk": "^2.4.2",
     "eslint": "^5.16.0",
-    "eslint-loader": "^2.2.1",
+    "eslint-loader": "^3.0.3",
     "eslint-plugin-node": "^7.0.1",
     "lint-staged": "^7.3.0",
     "node-sass": "^4.13.0",
