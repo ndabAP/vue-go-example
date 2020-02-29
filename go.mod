@@ -29,7 +29,7 @@ require (
 	github.com/stretchr/testify v1.5.1 // indirect
 	golang.org/x/exp v0.0.0-20200228211341-fcea875c7e85 // indirect
 	golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae // indirect
-	gonum.org/v1/gonum v0.7.0
+	gonum.org/v1/gonum v0.6.2
 	gonum.org/v1/netlib v0.0.0-20200228210028-9c732c01dec4 // indirect
 	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
