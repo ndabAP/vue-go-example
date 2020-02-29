@@ -4,7 +4,7 @@ services:
   server:
     image: golang:1.14-alpine
     networks: 
-      - backend    
+      - server    
     volumes: 
       - .:/srv
     working_dir: /srv
@@ -15,7 +15,7 @@ services:
   client:
     image: node:12-alpine
     networks: 
-      - backend
+      - server
     links:
       - server
     volumes:
@@ -28,5 +28,5 @@ services:
     command: npm run serve
 
 networks:
-  backend:
+  server:
     driver: bridge
