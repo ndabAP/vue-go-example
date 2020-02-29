@@ -36,6 +36,14 @@ $ npm run serve
 
 Now navigate to the provided URL.
 
+### Docker
+
+Make sure you have Docker engine 18.06.0 or higher installed. You can start the server and the client with:
+
+```bash
+$ docker-compose up
+```
+
 ## Usage
 
 First, investigate the specs. Second, create some random data points and persist them in-memory. Now get some basic calculations or a distribution chart.
