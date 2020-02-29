@@ -9,14 +9,14 @@
     <div class="grid -right">
       <div class="cell -4of12">
         <fieldset class="form-group">
-          <label for="dataPoints">Points:</label>
-          <input id="dataPoints" type="text" v-model="points" placeholder="Enter a number" class="form-control">
+          <label for="points">Points:</label>
+          <input id="points" type="text" v-model="points" placeholder="Enter a number" class="form-control">
         </fieldset>
       </div>
       <div class="cell -4of12">
         <fieldset class="form-group">
-          <label for="dataPoints">Multiplier:</label>
-          <input id="dataPoints" type="text" v-model="multiplier" placeholder="Enter a number" class="form-control">
+          <label for="multiplier">Multiplier:</label>
+          <input id="multiplier" type="text" v-model="multiplier" placeholder="Enter a number" class="form-control">
         </fieldset>
       </div>
       <div class="cell -4of12" style="display: flex; align-items: center; justify-content: center;">

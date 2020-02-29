@@ -1,6 +1,6 @@
 module github.com/ndabAP/vue-go-example
 
-go 1.13
+go 1.14
 
 require (
 	github.com/gin-contrib/static v0.0.0-20191128031702-f81c604d8ac2
