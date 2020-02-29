@@ -1,6 +1,6 @@
 module github.com/ndabAP/vue-go-example
 
-go 1.13
+go 1.14
 
 require (
 	github.com/0xAX/notificator v0.0.0-20181105090803-d81462e38c21 // indirect

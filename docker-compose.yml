@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  server:
+    image: golang:1.14-alpine
+    networks: 
+      - backend    
+    volumes: 
+      - .:/srv
+    working_dir: /srv
+    ports:
+      - 3000:3000
+    command: go run cmd/main.go
+
+  client:
+    image: node:12-alpine
+    networks: 
+      - backend
+    links:
+      - server
+    volumes:
+      - ./web:/app
+    working_dir: /app
+    ports:
+      - 8080:8080
+    depends_on:
+      - server      
+    command: npm run serve
+
+networks:
+  backend:
+    driver: bridge
