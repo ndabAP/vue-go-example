@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
+import 'hack'
+
 import store from './store/index'
 import App from './App'
-import router from './router'
-import 'hack'
 
 Vue.use(VueResource)
 Vue.config.productionTip = false
@@ -12,7 +12,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   store,
-  router,
   template: '<App/>',
   components: { App }
 })
