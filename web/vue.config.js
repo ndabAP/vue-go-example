@@ -1,3 +1,6 @@
+const isDocker = !!process.env.ENV
+const target = isDocker ? 'server' : 'localhost'
+
 module.exports = {
   productionSourceMap: false,
 
@@ -16,7 +19,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://server:3000/api',
+        target: `http://${target}:3000/api`,
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

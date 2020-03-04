@@ -26,6 +26,8 @@ services:
     depends_on:
       - server      
     command: npm run serve
+    environment:
+    - ENV=docker
 
 networks:
   server:
