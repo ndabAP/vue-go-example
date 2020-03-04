@@ -16,8 +16,6 @@ services:
     image: node:12-alpine
     networks: 
       - server
-    links:
-      - server
     volumes:
       - ./web:/app
     working_dir: /app
