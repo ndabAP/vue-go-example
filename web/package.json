@@ -25,7 +25,7 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
-    "chalk": "^2.4.2",
+    "chalk": "^4.1.0",
     "eslint": "^5.16.0",
     "eslint-loader": "^3.0.4",
     "eslint-plugin-node": "^7.0.1",
