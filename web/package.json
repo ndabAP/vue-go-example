@@ -37,7 +37,7 @@
     "sass-loader": "^7.3.1",
     "semver": "^7.3.4",
     "vue-template-compiler": "^2.6.12",
-    "webpack": "^4.44.2"
+    "webpack": "^4.46.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
